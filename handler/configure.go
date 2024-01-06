@@ -18,4 +18,5 @@ func NewHandler(site *usecases.Site) *Handler {
 
 func (h *Handler) ConfigAuthRouteAPI(router *gin.RouterGroup) {
 	//sites
+	router.GET("/sites", h.getSite())
 }

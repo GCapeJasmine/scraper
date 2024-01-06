@@ -7,6 +7,7 @@ SCRIPTPATH="$(
 
 CURRENT_DIR=$SCRIPTPATH
 ROOT_DIR="$(dirname $CURRENT_DIR)"
+PORT="8090"
 
 INFRA_LOCAL_COMPOSE_FILE=$ROOT_DIR/build/docker-compose.dev.yaml
 
@@ -43,7 +44,7 @@ function api_start() {
   setup_env_variables
   echo "Start api app config file: $CONFIG_FILE"
   ENTRY_FILE="$ROOT_DIR/cmd/service/main.go"
-  go run $ENTRY_FILE --config-file=$CONFIG_FILE
+  go run $ENTRY_FILE --config-file=$CONFIG_FILE --port=$PORT
 }
 
 function worker_start() {
@@ -61,6 +62,7 @@ function setup_env_variables() {
     . $ROOT_DIR/build/.base.env
     set +a
     export CONFIG_FILE=$ROOT_DIR/build/app.yaml
+    export PORT=$PORT
 }
 
 function api() {

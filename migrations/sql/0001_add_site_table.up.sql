@@ -1,6 +1,6 @@
 CREATE TABLE sites (
     id  INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
     access_time INT,
     state VARCHAR(255),
     created_at  TIMESTAMP,

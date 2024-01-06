@@ -11,8 +11,9 @@ import (
 )
 
 func main() {
-	var configFile string
+	var configFile, port string
 	flag.StringVar(&configFile, "config-file", "", "Specify config file path")
+	flag.StringVar(&port, "port", "", "Specify port")
 	flag.Parse()
 
 	defer setting.WaitOSSignal()
@@ -25,7 +26,7 @@ func main() {
 	}
 
 	// migrate db
-	setting.MigrateDatabase(cfg.DB)
+	go setting.MigrateDatabase(cfg.DB)
 
 	//start new server
 	s := server.NewServer(cfg)
