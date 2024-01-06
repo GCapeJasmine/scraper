@@ -25,3 +25,8 @@ API to get site with minimum access time
 ```bash
 localhost:8090/v1/sites?is_minimum_access_time=true
 ```
+
+### Problem solving
+Use ticker to run job every interval.
+
+Split the input into batches and process synchronously using goroutines.
