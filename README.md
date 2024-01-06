@@ -1,5 +1,11 @@
 ## How to start
 
+Start infra - local environment
+
+```bash
+./scripts/bin.sh infra up
+```
+
 Start API server (conclude migration) - local environment
 
 ```bash
