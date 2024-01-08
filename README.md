@@ -6,7 +6,7 @@ Start infra - local environment
 ./scripts/bin.sh infra up
 ```
 
-Start API server (conclude migration) - local environment
+Start API server (include migration) - local environment
 
 ```bash
 ./scripts/bin.sh api start
